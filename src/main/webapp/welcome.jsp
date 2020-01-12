@@ -13,12 +13,26 @@
 <head>
     <title>Hello World!</title>
 </head>
-
-
 <body>
-<p>Server name: ${pageContext.request.serverName}</p>
-<p>Server port: ${pageContext.request.serverPort}</p>
-<p>Request URI: ${pageContext.request.requestURI}</p>
+<h1>
+    Dzisiaj jest:
+    <%
+        String nowString = LocalDateTime.now().toString();
 
+        out.print(nowString);
+    %>
+</h1>
+
+<p>licznik odwiedzin: <%= ++visitCounter %>
+<%--    KomentarzJSP--%>
+    <!-- komentarzHTML -->
+
+<<<<<<< HEAD
+<body>
+<jsp:forward page="redirected.jsp"/>
+=======
+
+</p>
+>>>>>>> parent of c1bf815... zadanie 7
 </body>
 </html>
