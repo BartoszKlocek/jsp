@@ -13,21 +13,12 @@
 <head>
     <title>Hello World!</title>
 </head>
+
+
 <body>
-<h1>
-    Dzisiaj jest:
-    <%
-        String nowString = LocalDateTime.now().toString();
+<p>Server name: ${pageContext.request.serverName}</p>
+<p>Server port: ${pageContext.request.serverPort}</p>
+<p>Request URI: ${pageContext.request.requestURI}</p>
 
-        out.print(nowString);
-    %>
-</h1>
-
-<p>licznik odwiedzin: <%= ++visitCounter %>
-<%--    KomentarzJSP--%>
-    <!-- komentarzHTML -->
-
-
-</p>
 </body>
 </html>
