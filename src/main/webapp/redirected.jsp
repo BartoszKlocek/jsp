@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="calculator" class="com.sda.services.Calculator"/>
+<jsp:setProperty name="calculator" property="n" value="5"/>
 <html>
 <head>
     <title>Redirected page</title>
@@ -19,7 +20,7 @@
 <p>
     5<sup>2</sup> wynosi:
     <%
-        int result = calculator.square(5);
+        int result = calculator.square();
         out.print(result);
     %>
 </p>
