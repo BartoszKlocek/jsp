@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: bartosz
-  Date: 12.01.2020
-  Time: 14:08
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:useBean id="calculator" class="com.sda.services.Calculator"/>
 <jsp:setProperty name="calculator" property="n" value="5"/>
