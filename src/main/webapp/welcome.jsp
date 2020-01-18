@@ -25,7 +25,8 @@
 
     </label>
     <input type="submit" value="wyslij">
-
+    <br/>
+<a href="search.jsp?query=JAVA&page=3&sort=desc">kliknij mnie</a>
 </form>
 <%--<jsp:forward page="redirected.jsp">--%>
 <%--<jsp:param name="myParam" value="myValue"/>--%>
