@@ -1,6 +1,7 @@
 package com.sda.servlet;
 
 import javax.servlet.ServletConfig;
+import javax.servlet.annotation.WebInitParam;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -9,7 +10,13 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 //Ta adnotaja to alermatywna wers(udunieto plik konfiguracyny z web.xml)
-//@WebServlet(name = "HelloWorldServlet", urlPatterns = {"/"})
+@WebServlet(
+        name = "HelloWorldServlet"
+        , urlPatterns = {"/"}
+        , initParams = {
+                @WebInitParam(name = "userId", value = "123456"),
+                @WebInitParam(name = "localization", value = "Poland")
+        })
 public class HelloWorldServlet extends HttpServlet {
     private String userId, localization;
 
