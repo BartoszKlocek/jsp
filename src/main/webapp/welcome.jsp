@@ -15,18 +15,19 @@
     <title>Obsluga cookie</title>
 </head>
 <body>
-<h2>Oblsuga cookie</h2>
+<%--SESJA POCZATEK--%>
+<h2>Oblsuga sesji</h2>
 <%
-//    wyborazamy sobie ze id jest z bazy danych
-    int searchId= 123456;
-    Cookie cookie = new Cookie("searchId", String.valueOf(searchId));
-    cookie.setMaxAge(60*60*24);
-    response.addCookie(cookie);
+//    inwalidate usuwa sese i tworzy nowa
+    request.getSession().invalidate();
+    HttpSession actualSession = request.getSession();
+    actualSession.setAttribute("userId",123456);
 
 
-    Cookie usernameCookie = new Cookie("username", "MyUserName");
-    response.addCookie(usernameCookie);
 
 %>
+
+
+<a href="session.jsp" target="_blank">session</a>
 </body>
 </html>
