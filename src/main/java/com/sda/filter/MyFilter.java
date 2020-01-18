@@ -1,10 +1,16 @@
 package com.sda.filter;
 
 import javax.servlet.*;
+import javax.servlet.annotation.WebFilter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+@WebFilter(filterName = "MyFilter", urlPatterns = {"/hello"})
+//mozemy uzyc albo urlPatterns albo servletNamesa
+//@WebFilter(filterName = "MyFilter", servletNames = {"/HelloWorldServlet"})
+
 public class MyFilter implements Filter {
+
 
 
     @Override
