@@ -1,5 +1,6 @@
 package com.sda.servlet;
 
+import javax.servlet.ServletConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,9 +9,18 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 //Ta adnotaja to alermatywna wers(udunieto plik konfiguracyny z web.xml)
-@WebServlet(name = "HelloWorldServlet", urlPatterns = {"/"})
+//@WebServlet(name = "HelloWorldServlet", urlPatterns = {"/"})
 public class HelloWorldServlet extends HttpServlet {
     private String userId, localization;
+
+
+//    zamiast kontruktorow tworzy sie metody innit
+    @Override
+    public void init(ServletConfig config){
+        userId=config.getInitParameter("userId");
+        localization=config.getInitParameter("localization");
+
+    }
 
 
     @Override

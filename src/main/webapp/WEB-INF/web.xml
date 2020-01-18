@@ -4,17 +4,26 @@
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-<!--    <servlet>-->
-<!--        <servlet-name>HelloWorldServlet</servlet-name>-->
-<!--        <servlet-class>com.sda.servlet.HelloWorldServlet</servlet-class>-->
-<!--    </servlet>-->
+    <servlet>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <servlet-class>com.sda.servlet.HelloWorldServlet</servlet-class>
+        <init-param>
+            <param-name>userId</param-name>
+            <param-value>Bartek</param-value>
 
-<!--&lt;!&ndash;    tworzymy mapowanei przy ktorym url ma sie wywolac serwlet&ndash;&gt;-->
+        </init-param>
+        <init-param>
+            <param-name>localization</param-name>
+            <param-value>Poland</param-value>
+        </init-param>
+    </servlet>
 
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>HelloWorldServlet</servlet-name>-->
-<!--        <url-pattern>/</url-pattern>-->
-<!--    </servlet-mapping>-->
+<!--    tworzymy mapowanei przy ktorym url ma sie wywolac serwlet-->
+
+    <servlet-mapping>
+        <servlet-name>HelloWorldServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 
 
 </web-app>
