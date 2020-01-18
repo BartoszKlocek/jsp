@@ -8,26 +8,25 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Wynik wyszukiwania</title>
+    <title>Obsługa Cookie</title>
 </head>
 <body>
-<p>Szukane slowo: <%=request.getParameter("query")%></p>
-<p>Strona: <%=request.getParameter("page")%></p>
-<%--To est wyrazenie <%=  %>   i moze byc tylko jedna moetoda ktoa cos zwraca i dlatego nie ma srednika%>--%>
-<%--<p>Sortowanie: <%("desc".equals(request.getParameter("sort"))? "malejąco":"rosnąco")%></p>--%>
-
+<h2>Obsluga cookie</h2>
 <%
-    switch (request.getParameter("sort")){
-        case "asc":
-            out.print("rosnaco");
-            break;
-        case "desc":
-            out.print("malejaco");
-            break;
-        default:
-            out.print("Niezdefioniowano");
+    Cookie[] cookies = request.getCookies();
+    if (cookies!=null){
+        out.println("<h2>Found cookies: </h2>");
+        for (Cookie cookie : cookies){
+            out.print("Name: "+ cookie.getName()+", ");
+            out.print("Value: "+ cookie.getValue()+ "<br/>");
+        }
 
     }
+
+    else {
+        out.print("<h2>No cookies found</h2>");
+    }
+
 %>
 
 </body>

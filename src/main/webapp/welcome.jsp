@@ -1,4 +1,5 @@
-<%@ page import="java.time.LocalDateTime" %><%--
+<%@ page import="java.time.LocalDateTime" %>
+<%@ page import="java.net.CookieHandler" %><%--
   Created by IntelliJ IDEA.
   User: bartosz
   Date: 12.01.2020
@@ -11,25 +12,21 @@
 <%--<%! private long visitCounter = 0; %>--%>
 <html>
 <head>
-    <title>Hello World!</title>
+    <title>Obsluga cookie</title>
 </head>
 <body>
-<h2>Parametry wyszukiwania</h2>
-<form action="search.jsp" method="post">
-    <label>Szukane słowo: <input type="text" name="query"></label>
-    <label>Strona<input type="number" name="page"> </label>
-    <label>Sortowanie: <select name="sort">
-        <option value="asc">rosnaco</option>
-        <option value="desc">malejaco</option>
-    </select>
+<h2>Oblsuga cookie</h2>
+<%
+//    wyborazamy sobie ze id jest z bazy danych
+    int searchId= 123456;
+    Cookie cookie = new Cookie("searchId", String.valueOf(searchId));
+    cookie.setMaxAge(60*60*24);
+    response.addCookie(cookie);
 
-    </label>
-    <input type="submit" value="wyslij">
-    <br/>
-<a href="search.jsp?query=JAVA&page=3&sort=desc">kliknij mnie</a>
-</form>
-<%--<jsp:forward page="redirected.jsp">--%>
-<%--<jsp:param name="myParam" value="myValue"/>--%>
-<%--</jsp:forward>--%>
+
+    Cookie usernameCookie = new Cookie("username", "MyUserName");
+    response.addCookie(usernameCookie);
+
+%>
 </body>
 </html>
