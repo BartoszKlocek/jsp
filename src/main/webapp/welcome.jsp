@@ -18,7 +18,7 @@
 <%--SESJA POCZATEK--%>
 <h2>Oblsuga sesji</h2>
 <%
-//    inwalidate usuwa sese i tworzy nowa
+//    invalidate usuwa sese i tworzy nowa
     request.getSession().invalidate();
     HttpSession actualSession = request.getSession();
     actualSession.setAttribute("userId",123456);

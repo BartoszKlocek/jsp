@@ -12,14 +12,19 @@
 </head>
 <body>
 <%
-//    Date createTime = new Date(session.getCreationTime());
+    //    Date createTime = new Date(session.getCreationTime());
 //    Date lastAccessTime = new Date(session.getLastAccessedTime());
     Object userId = session.getAttribute("userId");
 
 %>
 
 <p>UserID: <% out.print(userId); %></p>
-
+<p>ID: <%=session.getId() %>
+</p>
+<p>Creation time: <%=new Date(session.getCreationTime()) %>
+</p>
+<p>Last access time: <%=new Date(session.getLastAccessedTime()) %>
+</p>
 
 
 </body>
